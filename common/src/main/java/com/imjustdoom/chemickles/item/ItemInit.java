@@ -16,6 +16,7 @@ public class ItemInit {
     public static final RegistrySupplier<Pickle> PICKLE = ITEMS.register("pickle", Pickle::new);
     public static final RegistrySupplier<Cucumber> CUCUMBER = ITEMS.register("cucumber", Cucumber::new);
     public static final RegistrySupplier<Item> CUCUMBER_SEEDS = ITEMS.register("cucumber_seeds", ItemBase::new);
+    public static final RegistrySupplier<Item> PICKLE_RICK = ITEMS.register("pickle_rick", ItemBase::new);
 
     public static void init() {
         ITEMS.register();

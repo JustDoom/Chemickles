@@ -2,5 +2,8 @@
   "itemGroup.chemickles.chemickles_tab": "Chemickles",
 
   "item.chemickles.pickle": "Pickle",
-  "item.chemickles.cucumber": "Cucumber"
+  "item.chemickles.cucumber": "Cucumber",
+  "item.chemickles.cucumber_seeds": "Cucumber Seeds",
+
+  "block.chemickles.pickle_jar": "Pickle Jar"
 }
