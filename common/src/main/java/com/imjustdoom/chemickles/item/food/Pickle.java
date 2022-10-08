@@ -1,5 +1,6 @@
 package com.imjustdoom.chemickles.item.food;
 
+import com.google.common.collect.ImmutableList;
 import com.imjustdoom.chemickles.Chemickles;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.server.level.ServerPlayer;
@@ -18,6 +19,8 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import java.util.Iterator;
 
 public class Pickle extends Item {
+
+    //private final ImmutableList<MobEffectInstance> effects;
 
     public Pickle() {
         super(new Item.Properties()
