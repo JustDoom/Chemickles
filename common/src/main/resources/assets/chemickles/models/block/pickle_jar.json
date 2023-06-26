@@ -2,8 +2,8 @@
 	"parent": "pickle",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "chemickles:blocks/pickle_jar",
-		"particle": "chemickles:blocks/pickle_jar",
+		"0": "chemickles:block/pickle_jar",
+		"particle": "chemickles:block/pickle_jar"
 	},
 	"elements": [
 		{
