@@ -19,7 +19,7 @@ public class PickleJar extends Block {
             Block.box(5.5, 10, 5.5, 10.5, 11, 10.5),
             Block.box(5, 11, 5, 11, 12, 11),
             Block.box(5.5, 12, 5.5, 10.5, 12.75, 10.5)
-    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();;
+    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get();
 
     public PickleJar(Properties properties) {
         super(properties);

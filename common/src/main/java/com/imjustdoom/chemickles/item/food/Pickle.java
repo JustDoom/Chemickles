@@ -38,9 +38,9 @@ public class Pickle extends Item {
 
     @Override
     public ItemStack finishUsingItem(ItemStack itemStack, Level level, LivingEntity livingEntity) {
-        Player player = livingEntity instanceof Player ? (Player)livingEntity : null;
+        Player player = livingEntity instanceof Player ? (Player) livingEntity : null;
         if (player instanceof ServerPlayer) {
-            CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayer)player, itemStack);
+            CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayer) player, itemStack);
         }
 
         if (!level.isClientSide) {
@@ -50,7 +50,7 @@ public class Pickle extends Item {
                 if (mobEffectInstance.getEffect().isInstantenous()) {
                     mobEffectInstance.getEffect().applyInstantenousEffect(player, player, livingEntity, mobEffectInstance.getAmplifier(), 1);
                 } else {
-                    livingEntity.addEffect(new MobEffectInstance(mobEffectInstance.getEffect(), mobEffectInstance.getDuration() / 3, mobEffectInstance.getAmplifier(), mobEffectInstance.isAmbient(), mobEffectInstance.isVisible(), mobEffectInstance.showIcon()));
+                    livingEntity.addEffect(new MobEffectInstance(mobEffectInstance.getEffect(), mobEffectInstance.getDuration(), mobEffectInstance.getAmplifier(), mobEffectInstance.isAmbient(), mobEffectInstance.isVisible(), mobEffectInstance.showIcon()));
                 }
             }
         }

@@ -35,13 +35,11 @@ public class BlockInit {
     // | --------------------------- |
     // | Crops                       |
     // | --------------------------- |
-    public static final RegistrySupplier<CucumberCrop> CUCUMBER_CROP = registerBlockWithoutItem("cucumber_crop", () ->
-            new CucumberCrop(Block.Properties.of(Material.PLANT, MaterialColor.GRASS)
-                    .instabreak()
-                    .noCollission()
-                    .randomTicks()
-                    .sound(SoundType.CROP))
+    public static final RegistrySupplier<CucumberCrop> CUCUMBER_CROP = BLOCKS.register("cucumber_crop", () ->
+            new CucumberCrop(BlockBehaviour.Properties.copy(Blocks.WHEAT))
     );
+
+    // Registries
 
     private static <T extends Block> RegistrySupplier<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistrySupplier<T> toReturn = BLOCKS.register(name, block);
