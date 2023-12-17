@@ -8,6 +8,7 @@ import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -20,7 +21,7 @@ import java.util.function.Supplier;
 
 public class BlockInit {
 
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(Chemickles.MOD_ID, Registry.BLOCK_REGISTRY);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(Chemickles.MOD_ID, Registries.BLOCK);
 
     // | --------------------------- |
     // | Blocks                      |
@@ -29,7 +30,7 @@ public class BlockInit {
             () -> new PickleJar(Block.Properties.of(Material.CLAY, MaterialColor.COLOR_PURPLE)
                     .strength(0.4f)
                     .sound(SoundType.GLASS)),
-            Chemickles.CHEMICKLES_TAB
+            Chemickles.CHEMICKLES_TAB.get()
     );
 
     // | --------------------------- |
@@ -53,7 +54,7 @@ public class BlockInit {
 
     private static <T extends Block> RegistrySupplier<Item> registerBlockItem(String name, RegistrySupplier<T> block, CreativeModeTab tab) {
         return ItemInit.ITEMS.register(name, () -> new BlockItem(block.get(),
-                new Item.Properties().tab(tab)));
+                new Item.Properties().arch$tab(tab)));
     }
 
     public static void init() {

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "chemickles:items/pickle_rick"
+    "layer0": "chemickles:item/pickle_rick"
   }
 }

@@ -11,7 +11,7 @@ public class ChemicklesFabric implements ModInitializer {
         Chemickles.init();
     }
 
-    public static void setRenderLayer(Block block) {
-        BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getCutout());
-    }
+//    public static void setRenderLayer(Block block) {
+//        BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.class());
+//    }
 }

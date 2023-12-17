@@ -1,6 +1,8 @@
 package com.imjustdoom.chemickles.item;
 
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.alchemy.Potion;
@@ -55,7 +57,7 @@ public class Pickles {
     }
 
     private static Potion register(String string, Potion potion) {
-        return Registry.register(Registry.POTION, string, potion);
+        return Registry.register(BuiltInRegistries.POTION, string, potion);
     }
 
     static {

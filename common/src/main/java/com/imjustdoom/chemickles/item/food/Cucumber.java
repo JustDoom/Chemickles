@@ -8,7 +8,7 @@ public class Cucumber extends Item {
 
     public Cucumber() {
         super(new Properties()
-                .tab(Chemickles.CHEMICKLES_TAB)
+                .arch$tab(Chemickles.CHEMICKLES_TAB)
                 .food(new FoodProperties.Builder()
                         .nutrition(4)
                         .saturationMod(5)
