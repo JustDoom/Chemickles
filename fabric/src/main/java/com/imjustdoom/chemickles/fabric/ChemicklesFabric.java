@@ -1,11 +1,10 @@
-package com.imjustdoom.chemickles;
+package com.imjustdoom.chemickles.fabric;
 
+import com.imjustdoom.chemickles.Chemickles;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.minecraft.client.renderer.entity.layers.RenderLayer;
-import net.minecraft.world.level.block.Block;
 
 public class ChemicklesFabric implements ModInitializer {
+
     @Override
     public void onInitialize() {
         Chemickles.init();

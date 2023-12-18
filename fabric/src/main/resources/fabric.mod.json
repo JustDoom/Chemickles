@@ -16,6 +16,9 @@
   "entrypoints": {
     "main": [
       "com.imjustdoom.chemickles.fabric.ChemicklesFabric"
+    ],
+    "client": [
+      "com.imjustdoom.chemickles.ChemicklesClient"
     ]
   },
   "mixins": [
