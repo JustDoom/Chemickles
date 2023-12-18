@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[43,)"
+loaderVersion = "[45,)"
 #issueTrackerURL = ""
 license = "GPLv3"
 
@@ -16,20 +16,20 @@ This mod adds items, blocks, recipes that are just needed to be in minecraft!
 [[dependencies.chemickles]]
 modId = "forge"
 mandatory = true
-versionRange = "[43,)"
+versionRange = "[45,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.chemickles]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.19.2,)"
+versionRange = "[1.19.4,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.chemickles]]
 modId = "architectury"
 mandatory = true
-versionRange = "[6.2.43,)"
+versionRange = "[8.2.89,)"
 ordering = "AFTER"
 side = "BOTH"

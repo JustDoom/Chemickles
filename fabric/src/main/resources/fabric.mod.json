@@ -15,7 +15,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.imjustdoom.chemickles.ChemicklesFabric"
+      "com.imjustdoom.chemickles.fabric.ChemicklesFabric"
     ]
   },
   "mixins": [
@@ -23,7 +23,7 @@
   ],
   "depends": {
     "fabric": "*",
-    "minecraft": ">=1.19.2",
-    "architectury": ">=6.2.43"
+    "minecraft": ">=1.19.4",
+    "architectury": ">=8.2.89"
   }
 }
