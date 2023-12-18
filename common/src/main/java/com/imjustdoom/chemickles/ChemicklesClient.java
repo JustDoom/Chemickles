@@ -11,7 +11,7 @@ public class ChemicklesClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        MenuRegistry.registerScreenFactory(ModScreenHandlers.JAR_MENU.get(), JarScreen::new);
+        MenuRegistry.registerScreenFactory(ModScreenHandlers.PICKLE_JAR_MENU.get(), JarScreen::new);
 //        setRenderLayer(BlockInit.CUCUMBER_CROP.get());
     }
 

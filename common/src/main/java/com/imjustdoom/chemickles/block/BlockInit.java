@@ -4,15 +4,15 @@ import com.imjustdoom.chemickles.Chemickles;
 import com.imjustdoom.chemickles.block.custom.CucumberCrop;
 import com.imjustdoom.chemickles.block.custom.PickleJar;
 import com.imjustdoom.chemickles.item.ItemInit;
+import dev.architectury.registry.CreativeTabRegistry;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
-import net.minecraft.client.renderer.item.ItemProperties;
-import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
@@ -30,7 +30,7 @@ public class BlockInit {
             () -> new PickleJar(Block.Properties.of(Material.CLAY, MaterialColor.COLOR_PURPLE)
                     .strength(0.4f)
                     .sound(SoundType.GLASS)),
-            Chemickles.CHEMICKLES_TAB.get()
+            Chemickles.CHEMICKLES_TAB
     );
 
     // | --------------------------- |
@@ -42,7 +42,7 @@ public class BlockInit {
 
     // Registries
 
-    private static <T extends Block> RegistrySupplier<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
+    private static <T extends Block> RegistrySupplier<T> registerBlock(String name, Supplier<T> block, CreativeTabRegistry.TabSupplier tab) {
         RegistrySupplier<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn, tab);
         return toReturn;
@@ -52,7 +52,7 @@ public class BlockInit {
         return BLOCKS.register(name, block);
     }
 
-    private static <T extends Block> RegistrySupplier<Item> registerBlockItem(String name, RegistrySupplier<T> block, CreativeModeTab tab) {
+    private static <T extends Block> RegistrySupplier<Item> registerBlockItem(String name, RegistrySupplier<T> block, CreativeTabRegistry.TabSupplier tab) {
         return ItemInit.ITEMS.register(name, () -> new BlockItem(block.get(),
                 new Item.Properties().arch$tab(tab)));
     }
