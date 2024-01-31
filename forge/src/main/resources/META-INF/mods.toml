@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "[45,)"
+#issueTrackerURL = ""
+license = "GPLv3"
+
+[[mods]]
+modId = "chemickles"
+version = "${version}"
+displayName = "Chemickles"
+authors = "JustDoom"
+description = '''
+This mod adds items, blocks, recipes that are just needed to be in minecraft!
+'''
+#logoFile = ""
+
+[[dependencies.chemickles]]
+modId = "forge"
+mandatory = true
+versionRange = "[45,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.chemickles]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.19.4,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.chemickles]]
+modId = "architectury"
+mandatory = true
+versionRange = "[8.2.89,)"
+ordering = "AFTER"
+side = "BOTH"
