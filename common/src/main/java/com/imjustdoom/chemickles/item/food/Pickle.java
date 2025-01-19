@@ -23,7 +23,6 @@ public class Pickle extends Item {
 
     public Pickle() {
         super(new Item.Properties()
-                .arch$tab(Chemickles.CHEMICKLES_TAB)
                 .food(new FoodProperties.Builder()
                         .nutrition(4)
                         .saturationMod(5)

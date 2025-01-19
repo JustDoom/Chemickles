@@ -2,16 +2,16 @@
   "schemaVersion": 1,
   "id": "chemickles",
   "version": "${version}",
-  "name": "Chemickles",
-  "description": "This mod adds items, blocks, recipes that are just needed to be in minecraft!",
+  "name": "${mod_name}",
+  "description": "${description}",
   "authors": [
-    "JustDoom"
+    "${mod_author}"
   ],
   "contact": {
-    "sources": "https://github.com/JustDoom/JustNeeded"
+    "sources": "https://github.com/JustDoom/Chemickles"
   },
-  "license": "GPLv3",
-  "icon": "assets/chemickles/icon.png",
+  "license": "${license}",
+  "icon": "assets/chemickles/${mod_id}.png",
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -25,8 +25,9 @@
     "chemickles.mixins.json"
   ],
   "depends": {
+    "fabricloader": ">=0.14",
     "fabric": "*",
-    "minecraft": ">=1.19.4",
-    "architectury": ">=8.2.89"
+    "minecraft": "${minecraft_version}",
+    "java": ">=17"
   }
 }

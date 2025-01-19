@@ -16,7 +16,7 @@ public class JarScreenHandler extends AbstractContainerMenu {
     private final ContainerData propertyDelegate;
 
     public JarScreenHandler(int syncId, Inventory inventory, FriendlyByteBuf buf) {
-        this(syncId, inventory, (Container) inventory.player.getLevel().getBlockEntity(buf.readBlockPos()), new SimpleContainerData(2));
+        this(syncId, inventory, (Container) inventory.player.level().getBlockEntity(buf.readBlockPos()), new SimpleContainerData(2));
     }
 
     public JarScreenHandler(int syncId, Inventory inventory) {
