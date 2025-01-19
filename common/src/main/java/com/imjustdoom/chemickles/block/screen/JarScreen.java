@@ -2,8 +2,6 @@ package com.imjustdoom.chemickles.block.screen;
 
 import com.imjustdoom.chemickles.Chemickles;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.gui.GuiComponent;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;
@@ -26,27 +24,20 @@ public class JarScreen extends AbstractContainerScreen<JarScreenHandler> {
     }
 
     @Override
-    protected void renderBg(GuiGraphics matrices, float delta, int mouseX, int mouseY) {
+    protected void renderBg(GuiGraphics guiGraphics, float delta, int mouseX, int mouseY) {
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.setShaderTexture(0, TEXTURE);
         int x = (width - imageWidth) / 2;
         int y = (height - imageHeight) / 2;
-        GuiComponent.blit(matrices, x, y, 0, 0, imageWidth, imageHeight);
+        guiGraphics.blit(TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
 
-        renderProgressArrow(matrices, x, y);
+        renderProgressArrow(guiGraphics, x, y);
     }
 
-    private void renderProgressArrow(PoseStack matrices, int x, int y) {
+    private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
         if(menu.isCrafting()) {
-            GuiComponent.blit(matrices, x + 105, y + 33, 176, 0, 8, menu.getScaledProgress());
+            guiGraphics.blit(TEXTURE, x + 105, y + 33, 176, 0, 8, menu.getScaledProgress());
         }
-    }
-
-    @Override
-    public void render(PoseStack matrices, int mouseX, int mouseY, float delta) {
-        renderBackground(matrices);
-        super.render(matrices, mouseX, mouseY, delta);
-        renderTooltip(matrices, mouseX, mouseY);
     }
 }

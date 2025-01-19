@@ -10,9 +10,9 @@ import java.util.function.Supplier;
 
 public class ModScreenHandlers {
 
-    public static final RegistryWrapper<MenuType<JarScreenHandler>> PICKLE_JAR_MENU = register("pickle_jar_menu", () -> JarScreenHandler::new);
+    public static final RegistryWrapper<MenuType<JarScreenHandler>> PICKLE_JAR_MENU = register("pickle_jar_menu", JarScreenHandler::new);
 
-    public static <T extends AbstractContainerMenu> RegistryWrapper<T> register(String id, Supplier<T> menu) {
+    public static <T extends AbstractContainerMenu> RegistryWrapper<MenuType<T>> register(String id, MenuType.MenuSupplier<T> menu) {
         return Services.PLATFORM.registerMenu(id, menu);
     }
 

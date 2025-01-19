@@ -2,10 +2,12 @@ package com.imjustdoom.chemickles.platform.services;
 
 import com.imjustdoom.chemickles.platform.RegistryWrapper;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 
 import java.util.function.Supplier;
 
@@ -44,7 +46,7 @@ public interface IPlatformHelper {
 
     <T extends Item> RegistryWrapper<T> registerItem(String id, Supplier<T> item);
     <T extends Block> RegistryWrapper<T> registerBlock(String id, Supplier<T> block);
-    <T extends BlockEntity> RegistryWrapper<T> registerBlockEntity(String id, Supplier<T> block);
-    <T extends AbstractContainerMenu> RegistryWrapper<T> registerMenu(String id, Supplier<T> block);
+    <T extends BlockEntity> RegistryWrapper<BlockEntityType<T>> registerBlockEntity(String id, Supplier<BlockEntityType<T>> block);
+    <T extends AbstractContainerMenu> RegistryWrapper<MenuType<T>> registerMenu(String id, MenuType.MenuSupplier<T> block);
     void registerTab(String id, CreativeModeTab tab);
 }

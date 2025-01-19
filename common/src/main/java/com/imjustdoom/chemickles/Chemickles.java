@@ -46,7 +46,7 @@ public class Chemickles {
     public static void init(CreativeModeTab tab) {
         CHEMICKLES_TAB = tab;
 
-        ModBlockEntities.registerBlockEntities();
-        ModScreenHandlers.registerAllScreenHandlers();
+        ModBlockEntities.init();
+        ModScreenHandlers.init();
     }
 }

@@ -18,7 +18,7 @@
       "com.imjustdoom.chemickles.fabric.ChemicklesFabric"
     ],
     "client": [
-      "com.imjustdoom.chemickles.ChemicklesClient"
+      "com.imjustdoom.chemickles.fabric.ChemicklesClient"
     ]
   },
   "mixins": [

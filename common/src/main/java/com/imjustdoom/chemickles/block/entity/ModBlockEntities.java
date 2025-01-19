@@ -11,9 +11,9 @@ import java.util.function.Supplier;
 
 public class ModBlockEntities {
     public static final RegistryWrapper<BlockEntityType<PickleJarBlockEntity>> PICKLE_JAR =
-        registerBlockEntity("pickle_jar", () -> BlockEntityType.Builder.of(PickleJarBlockEntity::new, BlockInit.PICKLE_JAR.get()).build(null));
+        registerBlockEntity("pickle_jar", () -> new BlockEntityType<>(PickleJarBlockEntity::new, Set.of(BlockInit.PICKLE_JAR.get()), null));
 
-    private static <T extends BlockEntity> RegistryWrapper<T> registerBlockEntity(String name, Supplier<T> block) {
+    private static <T extends BlockEntity> RegistryWrapper<BlockEntityType<T>> registerBlockEntity(String name, Supplier<BlockEntityType<T>> block) {
         return Services.PLATFORM.registerBlockEntity(name, block);
     }
 

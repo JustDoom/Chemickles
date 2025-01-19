@@ -1,6 +1,8 @@
 package com.imjustdoom.chemickles.fabric;
 
 import com.imjustdoom.chemickles.Chemickles;
+import com.imjustdoom.chemickles.block.BlockInit;
+import com.imjustdoom.chemickles.item.ItemInit;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.core.Registry;
@@ -15,7 +17,7 @@ public class ChemicklesFabric implements ModInitializer {
     @Override
     public void onInitialize() {
         CreativeModeTab tab = FabricItemGroup.builder()
-                .icon(() -> new ItemStack(ModItems.COOKED_EGG.get()))
+                .icon(() -> new ItemStack(ItemInit.PICKLE.get()))
                 .title(Component.translatable("category.chemickles.chemickles_tab"))
                 .displayItems((context, entries) -> {
                     BuiltInRegistries.ITEM.stream()
@@ -24,6 +26,9 @@ public class ChemicklesFabric implements ModInitializer {
                 })
                 .build();
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, new ResourceLocation(Chemickles.MOD_ID, "chemickles_tab"), tab);
+
+        ItemInit.init();
+        BlockInit.init();
 
         Chemickles.init(tab);
     }
